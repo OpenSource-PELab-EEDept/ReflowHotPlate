@@ -7,10 +7,14 @@ int thermoCS = 9; // CS of MAX6675 module to D9
 int thermoCLK = 10; // SCK of MAX6675 module to D10
 int SSRon = 13; //SSR control signal to D13
 int button = 2; //Control button pin to D2
-int buttonState = 0;
-int lastButtonState = 0;
-int stage = 0;
 
+//Current and Previous Button State
+int buttonState = 0; 
+int lastButtonState = 0; 
+
+int stage = 0; //Variable for process stage
+
+//Current and Previous Temperature Values
 int CurrTemp = 0;
 int OldTemp = 0;
 
@@ -46,17 +50,17 @@ void loop()
   {
     if (buttonState == HIGH && stage == 0) 
     {
-     stage = 1;
+     stage = 1;//If button is pressed outside the soldering process, the process will be triggered to start
     } 
     else if (buttonState == HIGH && stage != 0)
     {
-      stage = 0;
+      stage = 0;//If button is pressed while soldering is ongoing, process will be stopped
     }
   delay(50);
   }
   lastButtonState = buttonState;
 
-  if(t<130 && stage == 1)
+  if(t<130 && stage == 1)//Initial ramp to soak, slope controlled at ~2.25K/s
   {
     lcd.setCursor(0, 1);
     t = thermocouple.readCelsius();
@@ -84,7 +88,7 @@ void loop()
     }
   }
   
-  else if(120<t<160 && stage == 2)
+  else if(120<t<160 && stage == 2)// Preheat/Soak stage, slow rise in temperature
   {
     lcd.setCursor(0, 1);
     lcd.println("Preheat/Soak");
@@ -104,7 +108,7 @@ void loop()
     }
   }
   
-  else if(160<t && stage == 3)
+  else if(160<t && stage == 3)//Final ramp to reflow, slope controlled at ~2.25K/s
   {
     lcd.setCursor(0, 1);
     lcd.println("Reflow       ");
@@ -130,7 +134,7 @@ void loop()
       stage = 4;
     }
   }
-  else if(stage == 4)
+  else if(stage == 4)//Power cutoff at 215 degrees Celsius, thermal inertia carries temp to about 240 Celsius
   {
     lcd.setCursor(0, 1);
     lcd.println("Cooldown      ");
@@ -142,7 +146,7 @@ void loop()
     lcd.print(stage);
     digitalWrite(SSRon, LOW);
   }
-  else if(stage == 0)
+  else if(stage == 0)//Initial/Reset stage, press button to start again
   {
     lcd.setCursor(0, 1);
     lcd.println("Press to start  ");
