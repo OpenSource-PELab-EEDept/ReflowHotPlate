@@ -1,8 +1,8 @@
-1x Arduino Uno board
-1x HLK_10M09 power supply module
-1x 1604 LCD display
-1x Solid State Relay
+1x Arduino Uno R3 or compatible board (INR 1079 @ https://robu.in/product/arduino-uno-r3/)
+1x HLK_10M09 power supply module (INR279 @ https://www.electronicscomp.com/hlk-10m09-hi-link-9v-10w-ac-to-dc-power-supply-module)
+1x 1604 LCD display (INR469 @ https://robu.in/product/jhd-16x4-character-lcd-display-with-yellow-backlight/)
+1x Solid State Relay (Fotek SSR-10DA used)(INR329 @ https://robu.in/product/dc-to-ac-ssr-10da-solid-state-relay-module-3-32-vdc-24-380vac-10a/)
 1x Push Button
-1x MAX6675 Thermocouple Temperature Sensor Module
+1x MAX6675 Thermocouple Temperature Sensor Module with k-type thermocouple (INR 255 @ https://www.electronicscomp.com/max6675-module-with-k-type-thermocouple-sensor-india)
 1x N-Channel MOSFET (IRF520 used)
 Assorted Resistors (560Ohm, 1KOhm, 470KOhm used)
