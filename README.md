@@ -7,3 +7,5 @@ This project is designed to facilitate reflow soldering for SMD components using
 All components selected for this project are commercially available on Indian websites (robu.in, sunrom.com, probots.co.in, etc). Product links mentioned in the parts list are merely suggestions and subject to availability. None of the contributors to this project are associated to any such website and neither intend to promote the former, nor earn any commission from any sales generated from the given links.
 
 Licensed under the TAPR Open Hardware License (www.tapr.org/OHL)
+
+OSHWLab link - https://oshwlab.com/tirth.patel/hotplate
