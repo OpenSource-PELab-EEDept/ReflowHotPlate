@@ -1,2 +1,16 @@
 This folder contains instructions and tutorial material on how to properly assemble & use the system 
 Licensed under the TAPR Open Hardware License (www.tapr.org/OHL)
+
+After Successfully assembling the system, to use it
+-Plug System into mains
+-Place PCB with solder paste and placed components on the Heating Plate (Placed on flat/side without components on the hot surface, with the component side on top)
+-Turn on main switch
+-Wait for LCD to display message "press to start"
+-Press push button to start
+-Let the PCB heat up and wait for components to solder to board
+-Wait for heating surface to cool down
+-Press push button to stop
+-Remove PCB from heating surface
+
+CAUTION - HEATING SURFACE WILL EXCEED TEMPERATURES OF 200°C, DO NOT TOUCH WHEN HOT!!
+Switch off all fans in the vicinity to aid surface in heating faster
